@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href={% static 'css/main.css'%}>
+    <title>{% block title %}{{ title1 }}{% endblock title %}</title>
+  </head>
+  <body>
+    <header id="header">
+      <span class="logo">TeacherCode</span>
+      <nav>
+        <ul class="menu">
+          <li>
+            <a href="{% url 'blog:home' %}">Inicio</a>
+          </li>
+          <li>
+            <a href="{% url 'blog:periodo_list' %}">Periodo</a>
+          </li>
+          <li>
+            <a href="{% url 'blog:asignatura_List' %}">Asignatura</a>
+          </li>
+          <li>
+            <a href="{% url 'blog:profesor_List' %}">Profesor</a>
+          </li>
+          <li>
+            <a href="{% url 'blog:estudiante_list' %}">Estudiantes</a>
+          </li>
+          <li>
+            <a href="{% url 'blog:nota_List' %}">Notas</a>
+          </li>
+          <li>
+            <a href="{% url 'blog:detallenota_List' %}">Detalles notas</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="content">
+      {% block content %}
+      <h1>{{ title2 }}</h1>
+      {% endblock content %}
+    </main>
+  </body>
+</html>
